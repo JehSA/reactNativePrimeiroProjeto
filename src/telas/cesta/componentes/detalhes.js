@@ -1,17 +1,21 @@
+// Bibliotecas e recursos
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
 
+//Componentes
 import Texto from '../../../componentes/texto';
+import Botao from '../../../componentes/botao';
 
-export default function Detalhes({ nome, logoFazenda, nomeFazenda, descricao, preco }) {
+export default function Detalhes({ nome, logoFazenda, nomeFazenda, descricao, preco, botao }) {
     return <>
         <Texto style={estilos.nome}>{ nome }</Texto>
         <View style={estilos.fazenda}>
-            <Image source={logoFazenda} style={estilos.imagemFazenda} />
+            <Image source={ logoFazenda } style={estilos.imagemFazenda} />
             <Texto style={estilos.nomeFazenda}>{ nomeFazenda }</Texto>
         </View>            
         <Texto style={estilos.descricao}>{ descricao }</Texto>
         <Texto style={estilos.preco}>{ preco }</Texto>
+        <Botao texto={ botao } style={estilos.botao} onPress={() => {}} />
     </>
 }
 
@@ -46,5 +50,8 @@ const estilos = StyleSheet.create({
         fontSize: 26,
         lineHeight: 42,
         marginTop: 8
+    },
+    botao: {
+        marginTop: 16
     }
 });
